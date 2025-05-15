@@ -1,6 +1,6 @@
 ---
 
-# PABW_Service
+# Svelte_service
 
 A full-stack project for managing cars, with a Svelte frontend and a Node.js (Express) backend.
 
@@ -16,7 +16,7 @@ A full-stack project for managing cars, with a Svelte frontend and a Node.js (Ex
 
 ```bash
 git clone <your-repo-url>
-cd PABW_Service
+cd Svelte_service
 ```
 
 ---
@@ -68,7 +68,7 @@ npm run dev
 ## 5. Project Structure
 
 ```
-PABW_Service/
+Svelte_service/
   backend/    # Express server, SQLite DB, API routes
   frontend/   # SvelteKit app
 ```
