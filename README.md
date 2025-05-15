@@ -93,11 +93,3 @@ Svelte_service/
 - `npm run dev` — Start frontend dev server
 
 ---
-
-## 8. License
-
-MIT (or your chosen license)
-
----
-
-Let me know if you want this saved as a file or need any customization!
