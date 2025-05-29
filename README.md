@@ -1,6 +1,6 @@
 ---
 
-# Svelte_service
+# svelte_service
 
 A full-stack project for managing cars, with a Svelte frontend and a Node.js (Express) backend.
 
@@ -16,7 +16,7 @@ A full-stack project for managing cars, with a Svelte frontend and a Node.js (Ex
 
 ```bash
 git clone <your-repo-url>
-cd Svelte_service
+cd svelte_service
 ```
 
 ---
@@ -35,7 +35,7 @@ npm start
 ```
 
 - The backend will run on [http://localhost:5000](http://localhost:5000)
-- Make sure `sqlite.db` is present in the `backend` folder (already included).
+- Make sure `cars.db` is present in the `backend` folder (already included).
 
 ---
 
@@ -68,7 +68,7 @@ npm run dev
 ## 5. Project Structure
 
 ```
-Svelte_service/
+svelte_service/
   backend/    # Express server, SQLite DB, API routes
   frontend/   # SvelteKit app
 ```
@@ -78,7 +78,7 @@ Svelte_service/
 ## 6. Troubleshooting
 
 - If ports are in use, stop other processes or change the port in the config files.
-- For database issues, ensure `sqlite.db` exists in `backend/`.
+- For database issues, ensure `cars.db` exists in `backend/`.
 
 ---
 

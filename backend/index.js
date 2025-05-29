@@ -1,6 +1,6 @@
 const Fastify = require("fastify");
 const cors = require("@fastify/cors");
-const carsRoutes = require("./routes/carsRoutes");
+const carsRoutes = require("./carsRoutes");
 
 const app = Fastify();
 
@@ -9,7 +9,9 @@ app.register(cors, {
   methods: ["GET", "POST", "DELETE", "PUT"],
 });
 
-app.register(carsRoutes);
+app.get("/health", () => ({ status: "cars-backend up" }));
+
+app.register(carsRoutes, { prefix: "/cars" });
 
 app.listen({ port: 5000 }, (err, address) => {
   if (err) {

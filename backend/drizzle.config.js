@@ -1,8 +1,9 @@
+/** @type {import('drizzle-kit').Config} */
 module.exports = {
   schema: "./db/schema.js",
-  out: "./migrations",
+  out: "./db/migrations",
   dialect: "sqlite",
   dbCredentials: {
-    url: "./sqlite.db",
-  },
+    url: "./cars.db"
+  }
 };
