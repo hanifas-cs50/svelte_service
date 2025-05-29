@@ -1,15 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "server.js",
-  "type": "commonjs",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "npx nodemon server.js",
+    "push": "npx drizzle-kit push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "type": "commonjs",
   "dependencies": {
     "@fastify/cors": "^11.0.1",
     "better-sqlite3": "^11.10.0",
