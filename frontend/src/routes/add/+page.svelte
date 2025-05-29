@@ -19,6 +19,7 @@
 
 		if (model === '' || brand === '' || price <= 0) {
 			error = 'All fields are required';
+      loading = false;
 			return;
 		}
 
@@ -77,16 +78,14 @@
 	</div>
 
 	<button
-		class="mt-4 cursor-pointer rounded bg-blue-500/90 py-2 font-medium text-white hover:bg-blue-500"
+		class="mt-4 cursor-pointer rounded bg-blue-500/90 py-2 font-medium text-white hover:bg-blue-500 disabled:bg-zinc-500"
 		type="submit"
 		disabled={loading}
 	>
 		{loading ? 'Adding...' : 'Add'}
 	</button>
 	<a
-		class="mt-1 rounded bg-zinc-500/90 py-2 text-center font-medium text-white hover:bg-zinc-500 {loading
-			? 'opacity-50'
-			: ''}"
+		class="mt-1 py-2 text-center font-medium text-white rounded bg-zinc-500/90 hover:bg-zinc-500 {loading ? 'opacity-50' : ''}"
 		href={loading ? '#' : `/`}
 	>
 		Back

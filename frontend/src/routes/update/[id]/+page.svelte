@@ -18,6 +18,7 @@
 
 		if (car === undefined) {
 			error = 'Invalid car ID! (Why did you do that?)';
+      loading = false;
 			return;
 		}
 
@@ -30,6 +31,7 @@
 
 		if (model === '' || brand === '' || price <= 0) {
 			error = 'All fields are required';
+      loading = false;
 			return;
 		}
 
@@ -59,7 +61,7 @@
 			type="text"
 			id="model"
 			name="model"
-      defaultValue={car?.model}
+      defaultValue={car ? car.model : ""}
 			autocomplete="off"
 			required
 		/>
@@ -71,7 +73,7 @@
 			type="text"
 			id="brand"
 			name="brand"
-      defaultValue={car?.brand}
+      defaultValue={car ? car.brand : ""}
 			autocomplete="off"
 			required
 		/>
@@ -82,7 +84,7 @@
 			class="rounded border-2 border-zinc-500/60 px-2 py-1 font-medium text-zinc-800 outline-none hover:border-zinc-500 focus:border-zinc-500"
 			type="number"
 			id="price"
-      defaultValue={car?.price}
+      defaultValue={car ? car.price : ""}
 			name="price"
 			min="0"
 			max="99999"
@@ -91,7 +93,7 @@
 	</div>
 
 	<button
-		class="mt-4 py-2 font-medium text-white cursor-pointer rounded bg-blue-500/90 hover:bg-blue-500"
+		class="mt-4 py-2 font-medium text-white cursor-pointer rounded bg-blue-500/90 hover:bg-blue-500 disabled:bg-zinc-500"
 		type="submit"
 		disabled={car === undefined || loading}
 	>
