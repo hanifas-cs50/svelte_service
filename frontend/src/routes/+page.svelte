@@ -3,6 +3,15 @@
 
 	let error = $state('');
 	let loading = $state(false);
+  let searchQuery = $state("");
+  let filtered = $derived.by(() => {
+    let fCars = $cars.filter(
+      (car) => 
+      car.brand.toLocaleLowerCase().includes(searchQuery.toLowerCase()) ||
+      car.model.toLocaleLowerCase().includes(searchQuery.toLowerCase())
+    )
+    return fCars;
+  })
 
 	async function onDelete(id: number) {
     error = '';
@@ -19,6 +28,15 @@
 
 <h1 class="mb-4 text-center text-2xl font-bold">Home</h1>
 
+<div class="mb-4">
+  <input
+    type="text"
+    bind:value={searchQuery}
+    placeholder="Search cars by model or brand..."
+    class="border rounded p-2 w-full max-w-sm mx-auto"
+  />
+</div>
+
 {#if !!error}
 	<div class="mb-4 rounded bg-red-200 p-2 text-red-800">{error}</div>
 {/if}
@@ -34,7 +52,7 @@
 		</tr>
 	</thead>
 	<tbody class="text-center">
-		{#each $cars as { id, model, brand, price }, i (id)}
+		{#each filtered as { id, model, brand, price }, i (id)}
 			<tr>
 				<td class="border p-2">{i + 1}.</td>
 				<td class="border p-2">{model}</td>
